@@ -6,7 +6,7 @@ LABEL org.opencontainers.image.description="A container for running a PaperMC Mi
 LABEL org.opencontainers.image.authors="Ian Pratt <ianjdpratt@gmail.com>"
 LABEL org.opencontainers.image.url="https://github.com/cogsandsquigs/papermc-docker"
 LABEL org.opencontainers.image.documentation="https://github.com/cogsandsquigs/papermc-docker"
-LABEL org.opencontainers.image.source="https://wiki.archlinux.org/title/Docker#Arch_Linux"
+LABEL org.opencontainers.image.source="https://github.com/cogsandsquigs/papermc-docker"
 LABEL org.opencontainers.image.licenses="MIT"
 
 # Arguments for the build.
