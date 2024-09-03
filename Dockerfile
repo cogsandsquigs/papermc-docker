@@ -20,10 +20,6 @@ WORKDIR /
 # Copy all the files into the container
 COPY ./* ./
 
-# Move `paper-global.yml` to the server folder so we can enable certain settings right away.
-RUN mkdir -p ./minecraft/config
-RUN mv paper-global.yml ./minecraft/config/paper-global.yml
-
 # Install required dependencies for MC, Paper, + plugins
 RUN apk add --no-cache openrc eudev udev-init-scripts openjdk${JAVA_VER}-jre-headless wget libstdc++
 
