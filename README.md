@@ -1,15 +1,26 @@
 # papermc-docker
 
-A container for running a PaperMC Minecraft server
+A container for running a PaperMC Minecraft server.
 
-## Files
+## Running
 
-The server location is at `/minecraft/server`, and contains the world folders, plugin folders, etc. Essentially contains
-everything that the server creates to run itself.
+This container uses Alpine Linux, but it should work as normal regardless. If there are any issues, please don't
+hesitate to reach and create an issue.
+
+This docker container exposes the Minecraft server at port 25565 (as per typical Minecraft). If you want a different
+port, map it as such.
+
+> [!NOTE]
+> By default, Spark is disabled due to it crashing on alpine linux.
 
 ## Configuration
 
-Configuration is done via environment variables and build arguments.
+Program configuration is done via environment variables and build arguments. PaperMC configuration is described below:
+
+### PaperMC
+
+The server location is at `/minecraft`, and contains the world folders, plugin folders, datapack folders, mod folders, etc. Essentially contains
+everything that the server creates to run itself.
 
 ### Environment Variables
 
