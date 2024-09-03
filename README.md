@@ -11,7 +11,7 @@ This docker container exposes the Minecraft server at port 25565 (as per typical
 port, map it as such.
 
 > [!NOTE]
-> By default, Spark is disabled due to it crashing on alpine linux.
+> By default, Spark is disabled due to it crashing on Alpine.
 
 ## Configuration
 
