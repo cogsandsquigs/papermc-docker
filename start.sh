@@ -1,11 +1,7 @@
 #!/bin/sh
 
-# Default the EULA to `FALSE`, so that the server doesn't start if the EULA hasn't been accepted.
-: "${EULA:=FALSE}"
-# Enable RCON by default.
-: "${RCON:=true}"
-# Default the RCON password to `password`.
-: "${RCON_PASS:=password}"
+# load the default environment variables
+sh /env-var-defaults.sh
 
 # If the /data folder doesn't exist, create it.
 mkdir -p /data

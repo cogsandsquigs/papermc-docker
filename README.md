@@ -41,7 +41,7 @@ everything that the server creates to run itself.
 | Name            | Description                                             | Required                 |
 | --------------- | ------------------------------------------------------- | ------------------------ |
 | `MINECRAFT_VER` | The version of Minecraft to play on                     | No, defaults to `1.21.1` |
-| `PAPER_BUILD`   | The build of PaperMC to use for `MINECRAFT_VER`         | No, defaults to `57`     |
+| `PAPER_BUILD`   | The build of PaperMC to use for `MINECRAFT_VER`         | No, defaults to `64`     |
 | `JAVA_VER`      | The version of Java OpenJDK to use with `MINECRAFt_VER` | No, defaults to `21`     |
 
 ## Administrating

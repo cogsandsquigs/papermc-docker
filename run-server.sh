@@ -1,10 +1,10 @@
 #!/bin/sh
 
+# load the default environment variables
+sh /env-var-defaults.sh
+
 # First, we need to be in the minecraft directory.
 cd /data
-
-# Defaults to 4GB of memory.
-: "${MEM:=4G}"
 
 # Command to run the minecraft server, generated from here: https://docs.papermc.io/misc/tools/start-script-gen, with
 # `/paper.jar` as the server jar file (as this is in a separate folder).

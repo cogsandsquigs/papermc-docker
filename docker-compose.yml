@@ -7,7 +7,7 @@ services:
       context: .
       args:
         - MINECRAFT_VER=1.21.1
-        - PAPER_BUILD=57
+        - PAPER_BUILD=64
         - JAVA_VER=21
 
     ports:
@@ -30,10 +30,9 @@ services:
       AWS_SECRET_ACCESS_KEY: ${S3_SECRET}
       S3_BUCKET_URL: ${S3_BUCKET_URL}
       AWS_DEFAULT_REGION: ${S3_REGION}
-      CRON_SCHEDULE: 0 0 * * *
-      BACKUP_NAME: "mc-backup"
+      CRON_SCHEDULE: ${BACKUP_SCHEDULE}
+      BACKUP_NAME: ${BACKUP_NAME}
       S3_ENDPOINT: ${S3_ENDPOINT}
-      S3_STORAGE_CLASS: STANDARD
       TARGET: ${TARGET}
 
     volumes:
