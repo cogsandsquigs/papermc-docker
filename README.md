@@ -4,11 +4,10 @@ A container for running a PaperMC Minecraft server.
 
 ## Running
 
-This container uses Alpine Linux, but it should work as normal regardless. If there are any issues, please don't
-hesitate to reach and create an issue.
+This container uses Alpine Linux, but it should work as normal regardless (especially since `gcompat` is used in
+conjunction). If there are any issues, please don't hesitate to reach and create an issue.
 
-> [!NOTE]
-> By default, Spark is disabled due to it crashing on Alpine.
+Also here is a `docker-compose.yml` that can be used in conjunction which has an attached S3 backup solution.
 
 ### Ports
 
@@ -25,7 +24,7 @@ Program configuration is done via environment variables and build arguments. Pap
 
 ### PaperMC
 
-The server location is at `/minecraft`, and contains the world folders, plugin folders, datapack folders, mod folders, etc. Essentially contains
+The server location is at `/data`, and contains the world folders, plugin folders, datapack folders, mod folders, etc. Essentially contains
 everything that the server creates to run itself.
 
 ### Environment Variables

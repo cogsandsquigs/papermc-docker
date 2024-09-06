@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # First, we need to be in the minecraft directory.
-cd /minecraft
+cd /data
 
 # Defaults to 4GB of memory.
 : "${MEM:=4G}"
