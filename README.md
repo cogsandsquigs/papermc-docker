@@ -7,11 +7,17 @@ A container for running a PaperMC Minecraft server.
 This container uses Alpine Linux, but it should work as normal regardless. If there are any issues, please don't
 hesitate to reach and create an issue.
 
-This docker container exposes the Minecraft server at port 25565 (as per typical Minecraft). If you want a different
-port, map it as such.
-
 > [!NOTE]
 > By default, Spark is disabled due to it crashing on Alpine.
+
+### Ports
+
+Ports exposed are listed below
+
+| Port  | Description             |
+| ----- | ----------------------- |
+| 25565 | Minecraft protocol port |
+| 25575 | RCON protocol port      |
 
 ## Configuration
 
@@ -24,10 +30,12 @@ everything that the server creates to run itself.
 
 ### Environment Variables
 
-| Name   | Description                                                                                              | Required                |
-| ------ | -------------------------------------------------------------------------------------------------------- | ----------------------- |
-| `EULA` | Whether or not you accept the Minecraft EULA. `TRUE` if you do, `FALSE` if you don't.                    | No, defaults to `FALSE` |
-| `MEM`  | Sets the total memory that can be used.Is a number ending with either `G` (gigabytes) or `M` (megabytes) | No, defaults to `4G`    |
+| Name        | Description                                                                                              | Required                |
+| ----------- | -------------------------------------------------------------------------------------------------------- | ----------------------- |
+| `EULA`      | Whether or not you accept the Minecraft EULA. `TRUE` if you do, `FALSE` if you don't.                    | No, defaults to `FALSE` |
+| `MEM`       | Sets the total memory that can be used.Is a number ending with either `G` (gigabytes) or `M` (megabytes) | No, defaults to `4G`    |
+| `RCON`      | Enable RCON protocol from within the minecraft server (required for backups)                             | No, set by default      |
+| `RCON_PASS` | The password for the RCON protocol. If empty, RCON is disabled                                           | Only if `RCON` is set   |
 
 ### Build Arguments
 
