@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # First, we need to be in the minecraft directory.
 cd /minecraft
 

@@ -30,12 +30,12 @@ everything that the server creates to run itself.
 
 ### Environment Variables
 
-| Name        | Description                                                                                              | Required                |
-| ----------- | -------------------------------------------------------------------------------------------------------- | ----------------------- |
-| `EULA`      | Whether or not you accept the Minecraft EULA. `TRUE` if you do, `FALSE` if you don't.                    | No, defaults to `FALSE` |
-| `MEM`       | Sets the total memory that can be used.Is a number ending with either `G` (gigabytes) or `M` (megabytes) | No, defaults to `4G`    |
-| `RCON`      | Enable RCON protocol from within the minecraft server (required for backups)                             | No, set by default      |
-| `RCON_PASS` | The password for the RCON protocol. If empty, RCON is disabled                                           | Only if `RCON` is set   |
+| Name        | Description                                                                                              | Required                   |
+| ----------- | -------------------------------------------------------------------------------------------------------- | -------------------------- |
+| `EULA`      | Whether or not you accept the Minecraft EULA. `TRUE` if you do, `FALSE` if you don't.                    | No, defaults to `FALSE`    |
+| `MEM`       | Sets the total memory that can be used.Is a number ending with either `G` (gigabytes) or `M` (megabytes) | No, defaults to `4G`       |
+| `RCON`      | Enable RCON protocol from within the minecraft server (required for backups). Either `true` or `false`.  | No, set by default         |
+| `RCON_PASS` | The password for the RCON protocol. If empty, RCON is disabled                                           | No, defaults to `password` |
 
 ### Build Arguments
 
@@ -44,3 +44,15 @@ everything that the server creates to run itself.
 | `MINECRAFT_VER` | The version of Minecraft to play on                     | No, defaults to `1.21.1` |
 | `PAPER_BUILD`   | The build of PaperMC to use for `MINECRAFT_VER`         | No, defaults to `57`     |
 | `JAVA_VER`      | The version of Java OpenJDK to use with `MINECRAFt_VER` | No, defaults to `21`     |
+
+## Administrating
+
+Generally, you can run commands against the Minecraft server by either:
+
+1. Running `/mc-cmd.sh <your-command-here>`
+2. Manually running the contents of `/mc-cmd.sh`: `rcon -H localhost -p 25575 -P $RCON_PASS <your-command-here>`
+
+Its recommended that you keep `RCON` set, and simply not expose port `25575` if you don't want RCON to be accessible. If
+you do expose RCON, make sure to set $RCON_PASS to something secret (not `password`)!
+
+If you do enable RCON, just know that you will not be able to run commands against the server.
