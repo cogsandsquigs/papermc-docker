@@ -30,5 +30,14 @@ elif [ -f /minecraft/server.properties ]; then
 	sed -i "s/enable-rcon=true/enable-rcon=false/g" /data/server.properties
 fi
 
+# If backups are enabled, add the backup script to the crontab.
+if [ $BACKUPS ]; then
+	# Add the backup script to the crontab.
+	echo "$BACKUP_CRON python3 /backup.py" | crontab -
+
+	# Start the cron daemon.
+	crond
+fi
+
 # Now, run the server.
 sh /run-server.sh

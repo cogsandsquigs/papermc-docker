@@ -12,3 +12,5 @@
 : "${RCON_PASS:=pass}"
 # Number of backups to keep. Defaults to 3.
 : "${NUM_BACKUPS:=3}"
+# Backup cron schedule. Defaults to "0 0 * * *".
+: "${BACKUP_CRON:="0 0 * * *"}"

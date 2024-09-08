@@ -26,7 +26,7 @@ s3 = boto3.client(
     aws_secret_access_key=os.environ.get("S3_SECRET_KEY"),
 )
 
-bucket_name = os.environ.get("S3_BUCKET_NAME")
+bucket_name = os.environ.get("S3_BUCKET")
 
 # Upload/Update single file
 s3.upload_file(tar_path, bucket_name, backup_name)
