@@ -19,15 +19,6 @@ tar_path = os.path.join(work_dir, backup_name)
 with tarfile.open(tar_path, "w:gz") as tar:
     tar.add(work_dir + "/data", arcname="data")
 
-"""
-s3 = boto3.client(
-    "s3",
-    endpoint_url="https://6a2000084da13cb43551f4059422f650.r2.cloudflarestorage.com",
-    aws_access_key_id="238e0cc781eea4b4c567ed25d4baf6e8",
-    aws_secret_access_key="1c1c47c04412239d60c7f973d207faafc1b015b52adf4e65152f0547806056fb",
-)
-"""
-
 s3 = boto3.client(
     "s3",
     endpoint_url=os.environ.get("S3_ENDPOINT"),
