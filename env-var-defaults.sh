@@ -9,4 +9,6 @@
 # Enable RCON by default.
 : "${RCON:=true}"
 # Defaults to "password". Should be changed!
-: "${RCON_PASS:=password}"
+: "${RCON_PASS:=pass}"
+# Number of backups to keep. Defaults to 3.
+: "${NUM_BACKUPS:=3}"

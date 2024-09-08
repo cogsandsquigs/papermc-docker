@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # load the default environment variables
-sh /env-var-defaults.sh
+. /env-var-defaults.sh
 
 # First, we need to be in the minecraft directory.
 cd /data

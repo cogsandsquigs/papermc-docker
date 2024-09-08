@@ -21,7 +21,7 @@ EXPOSE 25565
 EXPOSE 25575 
 
 # Install required dependencies for MC, Paper, + plugins, backup, etc.
-RUN apk add --no-cache rcon openrc eudev udev-init-scripts openjdk${JAVA_VER}-jre-headless wget libstdc++ gcompat
+RUN apk add --no-cache python3 py3-pip rcon openrc eudev udev-init-scripts openjdk${JAVA_VER}-jre-headless wget libstdc++ gcompat
 
 # Enable Glibc compatibility
 ENV LD_PRELOAD=/lib/libgcompat.so.0
@@ -41,6 +41,9 @@ RUN wget -O paper.jar https://papermc.io/api/v2/projects/paper/versions/${MINECR
 # Copy all the files into the container
 # NOTE: This is down here b/c the scripts are often updated.
 COPY ./* .
+
+# Add dependencies for the backup script
+RUN pip3 install -r /requirements.txt --break-system-packages
 
 # Run it!
 CMD ["sh", "/start.sh"]

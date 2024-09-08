@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # load the default environment variables
-sh /env-var-defaults.sh
+. /env-var-defaults.sh
 
 # If the /data folder doesn't exist, create it.
 mkdir -p /data

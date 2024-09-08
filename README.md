@@ -7,8 +7,6 @@ A container for running a PaperMC Minecraft server.
 This container uses Alpine Linux, but it should work as normal regardless (especially since `gcompat` is used in
 conjunction). If there are any issues, please don't hesitate to reach and create an issue.
 
-Also here is a `docker-compose.yml` that can be used in conjunction which has an attached S3 backup solution.
-
 ### Ports
 
 Ports exposed are listed below
@@ -29,12 +27,18 @@ everything that the server creates to run itself.
 
 ### Environment Variables
 
-| Name        | Description                                                                                              | Required                   |
-| ----------- | -------------------------------------------------------------------------------------------------------- | -------------------------- |
-| `EULA`      | Whether or not you accept the Minecraft EULA. `TRUE` if you do, `FALSE` if you don't.                    | No, defaults to `FALSE`    |
-| `MEM`       | Sets the total memory that can be used.Is a number ending with either `G` (gigabytes) or `M` (megabytes) | No, defaults to `4G`       |
-| `RCON`      | Enable RCON protocol from within the minecraft server (required for backups). Either `true` or `false`.  | No, set by default         |
-| `RCON_PASS` | The password for the RCON protocol. If empty, RCON is disabled                                           | No, defaults to `password` |
+| Name            | Description                                                                                              | Required                 |
+| --------------- | -------------------------------------------------------------------------------------------------------- | ------------------------ |
+| `EULA`          | Whether or not you accept the Minecraft EULA. `TRUE` if you do, `FALSE` if you don't.                    | No, defaults to `FALSE`  |
+| `MEM`           | Sets the total memory that can be used.Is a number ending with either `G` (gigabytes) or `M` (megabytes) | No, defaults to `4G`     |
+| `RCON`          | Enable RCON protocol from within the minecraft server (required for backups). Either `true` or `false`.  | No, set by default       |
+| `RCON_PASS`     | The password for the RCON protocol. If empty, RCON is disabled                                           | No, defaults to `pass`   |
+| `BACKUPS`       | Whether or not to enable backups                                                                         | No                       |
+| `NUM_BACKUPS`   | The number of backups to keep                                                                            | No, defaults to 3        |
+| `S3_ACCESS_KEY` | The access key for S3.                                                                                   | Only if `BACKUPS` is set |
+| `S3_SECRET_KEY` | The secret key for S3.                                                                                   | Only if `BACKUPS` is set |
+| `S3_ENDPOINT`   | The S3 endpoint to access the bucket to back up to.                                                      | Only if `BACKUPS` is set |
+| `S3_BUCKET`     | The S3 bucket to use for backups.                                                                        | Only if `BACKUPS` is set |
 
 ### Build Arguments
 
