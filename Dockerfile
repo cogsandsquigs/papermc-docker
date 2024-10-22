@@ -11,7 +11,7 @@ LABEL org.opencontainers.image.licenses="MIT"
 
 # Arguments for the build.
 ARG MINECRAFT_VER=1.21.1
-ARG PAPER_BUILD=71
+ARG PAPER_BUILD=128
 ARG JAVA_VER=21
 
 # Expose port(s) for the server
