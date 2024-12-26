@@ -10,8 +10,8 @@ LABEL org.opencontainers.image.source="https://github.com/cogsandsquigs/papermc-
 LABEL org.opencontainers.image.licenses="MIT"
 
 # Arguments for the build.
-ARG MINECRAFT_VER=1.21.1
-ARG PAPER_BUILD=128
+ARG MINECRAFT_VER=1.21.4
+ARG PAPER_BUILD=39
 ARG JAVA_VER=21
 
 # Expose port(s) for the server
