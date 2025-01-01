@@ -36,9 +36,10 @@ RUN rc-update add udev-postmount default
 WORKDIR /
 
 # Download the Paper jar
-RUN wget -O paper.jar https://papermc.io/api/v2/projects/paper/versions/${MINECRAFT_VER}/builds/${PAPER_BUILD}/downloads/paper-${MINECRAFT_VER}-${PAPER_BUILD}.jar
+RUN wget -O paper.jar https://api.papermc.io/v2/projects/paper/versions/${MINECRAFT_VER}/builds/${PAPER_BUILD}/downloads/paper-${MINECRAFT_VER}-${PAPER_BUILD}.jar
 
 # Copy all the files into the container
+#
 # NOTE: This is down here b/c the scripts are often updated.
 COPY ./* .
 
