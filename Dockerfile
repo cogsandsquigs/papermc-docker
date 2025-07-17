@@ -1,4 +1,4 @@
-FROM alpine:3.20
+FROM alpine:3.22
 
 # Metadata
 LABEL org.opencontainers.image.title="papermc-docker"
@@ -10,8 +10,8 @@ LABEL org.opencontainers.image.source="https://github.com/cogsandsquigs/papermc-
 LABEL org.opencontainers.image.licenses="MIT"
 
 # Arguments for the build.
-ARG MINECRAFT_VER=1.21.7
-ARG PAPER_BUILD=10
+ARG MINECRAFT_VER=1.21.8
+ARG PAPER_BUILD=3
 ARG JAVA_VER=21
 
 # Expose port(s) for the server
