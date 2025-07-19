@@ -1,18 +1,19 @@
 FROM alpine:3.22
 
+# Arguments for the build.
+ARG MINECRAFT_VER=1.21.8
+ARG PAPER_BUILD=6
+ARG JAVA_VER=21
+
 # Metadata
 LABEL org.opencontainers.image.title="papermc-docker"
 LABEL org.opencontainers.image.description="A container for running a PaperMC Minecraft server."
 LABEL org.opencontainers.image.authors="Ian Pratt <ianjdpratt@gmail.com>"
 LABEL org.opencontainers.image.url="https://github.com/cogsandsquigs/papermc-docker"
+LABEL org.opencontainers.image.version="Minecraft ${MINECRAFT_VER} (Paper build ${PAPER_BUILD}) on Java ${JAVA_VER}"
 LABEL org.opencontainers.image.documentation="https://github.com/cogsandsquigs/papermc-docker"
 LABEL org.opencontainers.image.source="https://github.com/cogsandsquigs/papermc-docker"
 LABEL org.opencontainers.image.licenses="MIT"
-
-# Arguments for the build.
-ARG MINECRAFT_VER=1.21.8
-ARG PAPER_BUILD=3
-ARG JAVA_VER=21
 
 # Expose port(s) for the server
 # Minecraft
