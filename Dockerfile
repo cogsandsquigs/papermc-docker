@@ -2,7 +2,7 @@ FROM alpine:3.22
 
 # Arguments for the build.
 ARG MINECRAFT_VER=1.21.8
-ARG PAPER_BUILD=6
+ARG PAPER_BUILD=17
 ARG JAVA_VER=21
 
 # Metadata
